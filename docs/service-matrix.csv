@@ -1,0 +1,13 @@
+Service,OS,Preferred route,Current qualification status,Fallback,Qualification note
+youtube,Windows,YouTube IFrame Player API or youtube.com signed out in a WebView2 service window with its own data_directory,candidate_not_tested,External default browser for the signed-in or Premium experience,Google has disabled Google Authentication in embedded webviews including WebView2 (Microsoft WebView2 browser-features doc); no in-app sign-in; ads and no history or Premium in-app; embed errors 101/150/153 handled visibly.
+youtube,macOS,YouTube IFrame Player API or youtube.com signed out in a WKWebView service window with its own data_store_identifier (macOS 14+),candidate_not_tested,External default browser for the signed-in or Premium experience,Same Google policy (disallowed_useragent); passkeys unavailable in WKWebView for third-party origins.
+apple_tv,Windows,tv.apple.com in a WebView2 service window,candidate_not_tested,Apple TV app from the Microsoft Store,Edge-equivalent PlayReady/Widevine expected (not in Microsoft's list of features unavailable in WebView2); verify protected title and HDCP on external displays; browser quality ceiling applies.
+apple_tv,macOS,tv.apple.com in a WKWebView service window,candidate_not_tested,Apple TV app,WKWebView gained encrypted media in the 2022 releases (WWDC22 10049); verify FairPlay in a third-party host on the exact macOS build; do not infer 4K/HDR.
+prime_video,Windows,primevideo.com in a WebView2 service window,candidate_not_tested,Prime Video app from the Microsoft Store or Edge,Provider documents computer playback up to HD/stereo; verify title and external-display behaviour; password or OTP sign-in only.
+prime_video,macOS,primevideo.com in a WKWebView service window,candidate_not_tested,Safari,Same HD ceiling; verify FairPlay path in WKWebView.
+jiohotstar,Windows,hotstar.com in a WebView2 service window (priority P0 test),candidate_not_tested,Edge,OTP sign-in; test protected episode and live stream; ads; Widevine L3 quality tier; this service motivated the project.
+jiohotstar,macOS,hotstar.com in a WKWebView service window (priority P0 test),candidate_not_tested,Safari,Hotstar's support page names Safari for 1080p in browsers; WKWebView must be measured and not assumed equivalent.
+youtube,Linux,not a release target,not_applicable,Browser,The suite ships macOS and Windows only; Linux removed from version 1.
+apple_tv,Linux,not a release target,not_applicable,Browser,Same.
+prime_video,Linux,not a release target,not_applicable,Browser,Provider limits Linux browsers to SD in any case.
+jiohotstar,Linux,not a release target,not_applicable,Use a supported device,Provider excludes Linux in any case.
